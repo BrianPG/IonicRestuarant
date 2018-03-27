@@ -22,7 +22,7 @@ export class OrderDetailPage {
     url;
     quantity;
     myDate;
-    orders[];
+    orders=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public view: ViewController) {
   }

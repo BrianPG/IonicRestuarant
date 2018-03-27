@@ -1,6 +1,6 @@
 {
   "name": "menuApp_HW2",
-  "app_id": "",
+  "app_id": "635f90d0",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
