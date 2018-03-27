@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>Menu</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-list>
+
+  
+  <ion-item-sliding *ngFor="let item of items">
+  
+  <ion-item (click)= "viewItem(item)">
+    <img src="{{item.url}}"  height="50" width="75" />
+ 
+      <h1>
+        {{item.itemName}}
+      </h1> 
+      <p > 
+       {{item.category}} 
+       ${{item.price}}
+      </p>
+  </ion-item>
+
+
+<ion-item-options side="left">
+    
+    <button ion-button color="dark"  (click)="editItem(item)">
+      <ion-icon name="create"></ion-icon>
+      Edit
+    </button>
+
+
+  </ion-item-options>
+
+
+
+<ion-item-options side="right">
+    <button ion-button color="danger" (click)="deleteItem(item)">
+      <ion-icon name="trash"></ion-icon>
+      Delete
+    </button>
+
+  </ion-item-options>
+</ion-item-sliding>
+
+</ion-list>
+
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+</ion-content>
